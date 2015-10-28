@@ -29,11 +29,11 @@ class Weather {
     var temp: Float?
     
     init(jsonDictionary: [String: AnyObject]) {
-        if let weather = jsonDictionary[Weather.weatherKey] as? [String: AnyObject] {
-            if let main = weather[Weather.mainKey] as? String {
+        if let weather = jsonDictionary[Weather.weatherKey] as? [[String: AnyObject]] {
+            if let main = weather[0][Weather.mainKey] as? String {
                 self.main = main
             }
-            if let description = weather[Weather.descriptionKey] as? String {
+            if let description = weather[0][Weather.descriptionKey] as? String {
                 self.description = description
             }
         }

@@ -12,7 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NetworkController.dataAtURL(NetworkController.searchURL(String(20171))) { (resultData) -> Void in
+            print(resultData)
+        }
         // Do any additional setup after loading the view.
     }
 
